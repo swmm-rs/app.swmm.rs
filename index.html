@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#fdf6e3" />
+    <script>
+      // Set the preference before styles load to avoid a flash of the other theme.
+      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      try {
+        const saved = localStorage.getItem('swmmrs.theme');
+        if (saved === 'light' || saved === 'dark') theme = saved;
+      } catch {
+        /* Use the system preference when storage is unavailable. */
+      }
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content =
+        theme === 'dark' ? '#002b36' : '#fdf6e3';
+    </script>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>SWMMRS · Stormwater modeling</title>
+    <script type="module" crossorigin src="/assets/index-CJxpCzK_.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-hePW80VL.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-CwJFpaho.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-Czpn1I53.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-lPYM2LBR.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
